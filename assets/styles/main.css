@@ -1,7 +1,8 @@
 body {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 * {
@@ -11,6 +12,8 @@ body {
 }
 
 ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   list-style: none;
 }
@@ -40,9 +43,15 @@ ul {
 .contrainer {
   margin: 0 16pt;
   padding: 0 5pt;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .logo__block span {
@@ -53,10 +62,14 @@ ul {
 }
 
 .header__nav__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   list-style: none;
   font-weight: 700;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 .header__nav__list .header__nav__item {
   cursor: pointer;
@@ -65,8 +78,12 @@ ul {
 }
 
 .basket__block {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   cursor: pointer;
   background: rgba(204, 204, 204, 0.5);
   padding: 2pt 8pt 2pt 12pt;
@@ -87,6 +104,11 @@ ul {
   height: 100vh;
   overflow: hidden;
 }
+.main__screen .banner__slider {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
 .main__screen .banner__slider .banner__container {
   position: absolute;
   width: 100%;
@@ -96,26 +118,49 @@ ul {
   position: absolute;
   width: 100%;
   top: 20vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-around;
 }
-.main__screen .banner__slider .banner__container .banner__block .banner__quote {
+.main__screen .banner__slider .banner__container .banner__block .banner__leftside {
+  position: relative;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  z-index: -1;
+}
+.main__screen .banner__slider .banner__container .banner__block .banner__leftside .banner__quote {
+  position: absolute;
+  right: 0;
+  margin-left: 50pt;
   font-size: 60pt;
   font-family: "Arial";
   font-weight: 900;
-  width: 500pt;
+  max-width: 500pt;
   line-height: 100%;
 }
-.main__screen .banner__slider .banner__container .banner__block .banner__info .product__tag__list .product__tag__item {
+.main__screen .banner__slider .banner__container .banner__block .banner__rightside {
+  position: relative;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  z-index: 1;
+}
+.main__screen .banner__slider .banner__container .banner__block .banner__rightside .banner__info {
+  position: absolute;
+  left: 200pt;
+  margin-right: 50pt;
+}
+.main__screen .banner__slider .banner__container .banner__block .banner__rightside .banner__info .product__tag__list .product__tag__item {
   margin-right: 6pt;
 }
-.main__screen .banner__slider .banner__container .banner__block .banner__info .product__tag__list .product__tag__item span {
+.main__screen .banner__slider .banner__container .banner__block .banner__rightside .banner__info .product__tag__list .product__tag__item span {
   padding: 6pt 12pt;
   background: rgba(204, 204, 204, 0.5);
   border-radius: 24pt;
   border: solid 1pt rgba(0, 0, 0, 0.05);
 }
-.main__screen .banner__slider .banner__container .banner__block .banner__info .product__tag__list .product__tag__item span.tag-sale {
+.main__screen .banner__slider .banner__container .banner__block .banner__rightside .banner__info .product__tag__list .product__tag__item span.tag-sale {
   background: rgba(248, 56, 56, 0.8);
   color: white;
 }
@@ -131,8 +176,14 @@ ul {
   margin-top: 12pt;
 }
 .main__screen .banner__slider .banner__container .banner__image {
-  position: absolute;
-  left: 25%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
           user-select: none;
 }
